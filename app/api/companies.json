@@ -1,0 +1,25 @@
+{
+	"rc":"00",
+	"rm":"Empresas encontradas",
+	"data": {
+		"companies":[
+			{
+				"value":"id234",
+				"text":"Empresa 1"
+			},
+			{
+				"value":"id2345",
+				"text":"Empresa 2"
+			},
+			{
+				"value":"id2346",
+				"text":"Empresa 3"
+			},
+			{
+				"value":"id23457",
+				"text":"Empresa 4"
+			}
+
+		]
+	}
+}

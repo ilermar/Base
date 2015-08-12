@@ -1,0 +1,19 @@
+<div class="jumbotron">
+  <div class="title">Enviar factura</div> 
+  <div class="subtitle">Agrega nueva factura</div>
+</div>
+
+<div>
+	<form ng-submit="submit()">
+		<div class="form-group">
+			<label class="col-sm-4" for="inputFile">Selecciona archivo XML</label>
+			<input class="col-sm-8" type="file" id="inputFile">
+			<p class="help-block">Archivo XML de la factura.</p>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-1 col-sm-11">
+				<button type="submit" class="btn btn-default">Enviar</button>
+			</div>
+		</div>
+	</form>
+</div>

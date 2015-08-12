@@ -1,0 +1,21 @@
+<div class="jumbotron">
+  <div class="title">Bienvenido !</div> 
+  <div class="subtitle">&nbsp;</div>
+</div>
+
+<div class="welcome">
+    <h2>Portal proveedores</h2>
+    <p>
+        Nuestro portal esta orientado a brindarte herramientas de colaboración que fortalezcan nuestra relación comercial. Disfrútalo !
+    </p>
+
+    <carousel interval="myCarousel.interval" no-wrap="myCarousel.noWrapSlides">
+      <slide ng-repeat="slide in myCarousel.slides" active="slide.active">
+        <img ng-src="{{slide.image}}" style="margin:auto;">
+        <div class="carousel-caption">
+          <!--<h4>Slide {{$index}}</h4>
+          <p>{{slide.text}}</p>-->
+        </div>
+      </slide>
+    </carousel>
+</div>

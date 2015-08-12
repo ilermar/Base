@@ -1,0 +1,404 @@
+a{
+  color: #2B537F;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #4194EE;
+  text-decoration: underline;
+}
+
+a:visited{
+  color: #2B537F;
+}
+
+/* Space out content a bit */
+body {
+  color: #444444;
+  padding-bottom: 20px;
+  padding-top: 5px;
+}
+
+h1,h2,h3,h4,h5,h6{
+  color: #2B537F;
+}
+
+i.glyphicon{
+  margin-right: 0.5em;
+}
+
+#SystemMenu{
+  width:15em;
+  float:left;
+}
+
+.alert{
+  margin-top: 20px;
+}
+
+.container {
+  max-width: 100%;
+  width: 100%;
+}
+
+.container .jumbotron{
+  background-color: #444444;
+  border-radius: 0;
+  color: white;
+  margin-top: 0;
+  padding-bottom: 1.5em;
+  padding-top: 1em;
+}
+
+.container .jumbotron .title{
+  font-size: 2em;
+}
+
+.container .jumbotron .subtitle{
+  font-size: 1.3em; 
+}
+
+.container-narrow > hr {
+  margin: 10px 0;
+}
+
+.dateElement input{
+  border-radius: 0;
+  display: inline-block;
+  margin: 0;
+  width: 82%;
+}
+
+.dateElement span.input-group-btn{
+  border-radius: 0;
+  display: inline-block;
+  margin: 0;
+  width: 16%;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.filtersContainer h4{
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.filtersContainer a{
+  font-size: 1.5em;
+}
+
+.filtersContainer a:hover{
+  text-decoration: none;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.formElement{
+  margin-bottom: 0.8em;
+}
+
+.formElement label{
+  display: block;
+  height: 2.2em;
+}
+
+.formheader{
+  margin-bottom: 10px;
+  border-style: solid;
+  border-color: #ddd;
+  border-width: 1px;
+  padding: 5px;
+  padding-bottom: 10px;
+  background-color: #fefefe;
+  border-radius: 6px;
+}
+
+.igsa{
+  border-bottom: 4px solid #F4FF40;
+  font-size: 1.5em;
+  margin: 1em 0;
+  padding: 0.5em 1em;
+}
+
+.igsa figure{
+  width: 40px;
+}
+
+.igsa figure img{
+  width: 40px;
+}
+.imgXML img,
+.imgPDF img{
+  width: 20px;
+}
+
+.login-input{
+  margin-top:10px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 30px;
+  padding-bottom: 0px;
+  height: 30px;
+}
+
+.header h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 5px;
+  padding-top: 0px;
+}
+
+.lanconta{
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.loginContainer{
+  margin-top: 5em;
+}
+
+.mainElement{
+  border-top: 2px solid #4194EE;
+  border-bottom: 4px solid #F4FF40;
+  margin: 1em 0;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.mainElement:first{
+  margin-top: 0;
+}
+
+.mainElement table{
+  text-align: center;
+  width: 100%;
+}
+
+.mainElement table thead{
+  background-color: #2B537F;
+  color: white;
+}
+
+.mainElement table th{
+  padding: 0.4em 0.2em;
+  text-align: center;
+}
+
+.mainElement table td{
+  text-align: center;
+}
+
+.mainview{
+  float: none;
+  margin-left:16em;
+}
+
+.scp-row{
+  margin-bottom: 0.5em;
+}
+
+.system-logo img{
+  width: 50px;
+}
+
+.system-title{
+  position: absolute;
+  top: 5px;
+  padding-left: 80px;
+}
+
+.table>thead:first-child>tr:first-child>th{
+  border-left: 1px solid white;
+}
+
+tr.selected{
+  background-color: #E8E8E8;
+  font-weight: bold;
+}
+
+tr{
+  cursor: pointer;
+}
+
+.version-legend{
+  margin-top:2em;
+  color:#B6B6B6;
+}
+
+.profile-img{
+  background-repeat: no-repeat;
+  background-image: url(/images/logo.png);
+  padding-bottom: 20px;
+}
+
+.imgSlider-btnPrev, .imgSlider-btnNext{
+  width:60px;
+  padding-left: 15px;
+  margin-top: 110px;
+  font-size:20px;
+}
+
+.imgSlider-btnDelete{
+  margin-left: 15px; 
+  padding-top: 5px;
+  font-size:20px;
+  float:left;
+}
+
+.imgSlider-btnPrev{
+  float:left;
+}
+
+.imgSlider-btnNext{
+  float:right;
+}
+
+.imgSlider-body{
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display:block;
+  background-color: #fefefe;
+  padding-top: 10px;
+}
+
+.container-dlg-slider{
+  height: 256px;
+}
+
+.systemAlertContainer{
+  z-index: 1000;
+  margin-left: 16em;
+}
+
+.ng-invalid-required{
+  border-color: red;
+}
+
+.forgot-password{
+  color:#ABABAB;
+  font-style: italic;
+  cursor: pointer;
+}
+
+.button-login{
+  text-align:right;
+}
+
+.button-login button{
+  font-weight: bold;
+  padding: .5em 2.5em;
+}
+
+.form-group{
+  line-height: 1.1em;
+  margin-bottom: 2em;
+}
+
+.options{
+  text-align: right;
+}
+
+.options button{
+  font-weight: bold;
+  padding: 0.5em 2.3em;
+}
+
+.rfc{
+  border-top: 2px solid #4194EE;
+  border-bottom: 4px solid #F4FF40;
+  margin: 1em 0 1.5em 0;
+  text-align: center;
+}
+
+.rfcFull{
+  font-size: 1.4em;
+  text-transform: uppercase;
+}
+
+.rfcName{  
+  font-size: 1.8em;
+  font-weight: bold;
+  
+}
+
+.session{
+  border: 1px solid #4194EE;
+  box-shadow: 3px 3px 16px 0px rgba(244,255,64,1);
+  padding-bottom: 3em;
+}
+
+.session h2{
+  margin-bottom: 1.2em;
+  text-decoration: underline;
+}
+
+.sessionblock{
+  position: absolute;
+  font-size: 1.2em;
+  text-align: right;
+  right:15px;
+  top:30px;
+}
+
+.welcome p{
+  font-size: 1.5em;
+}
+
+.welcomeTxt{
+  font-size: 1.4em;
+  padding-top: 3em;
+}
+
+.welcomeTxt a{
+  font-size: 1.3em;
+}
+
+.zagonContact figure figcaption{
+  font-weight: bold;  
+}
+
+.zagonContact h4{
+  margin-bottom: 0;
+}
+
+.zagon-logo{
+  position: absolute;
+  top:5px;
+  right: 15px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 10px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+}

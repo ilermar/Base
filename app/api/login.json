@@ -1,0 +1,11 @@
+{
+	"rc":"00",
+	"rm":"Sesión iniciada correctamente",
+	"data": {
+		"name": "Usuario ejemplo",
+		"provider": "Razon Social SA de CV",
+		"rfc": "LERO880505YU4",
+		"token": "ABC3454FFF909",
+		"first": 1
+	}
+}

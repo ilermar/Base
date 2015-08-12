@@ -1,0 +1,25 @@
+{
+	"rc":"00",
+	"rm":"Unidades de negocios encontradas",
+	"data": {
+		"businesses":[
+			{
+				"value":"id234",
+				"text":"Negocio 1"
+			},
+			{
+				"value":"id2345",
+				"text":"Negocio 2"
+			},
+			{
+				"value":"id2346",
+				"text":"Negocio 3"
+			},
+			{
+				"value":"id23457",
+				"text":"Negocio 4"
+			}
+
+		]
+	}
+}

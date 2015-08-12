@@ -1,0 +1,155 @@
+<div class="jumbotron">
+  <div class="title">Facturas</div> 
+  <div class="subtitle">Detalles de tus facturas</div>
+</div>
+
+<div class="filtersContainer">
+    <h4>Buscar facturas</h4>
+    <a ng-click="isCollapsed = !isCollapsed" title="Mostrar/Ocultar filtros">
+      <i ng-class="{'glyphicon-triangle-top': !isCollapsed, 'glyphicon-triangle-bottom': isCollapsed}" class="glyphicon"></i>
+    </a>
+    <div class="mainElement filters" collapse="isCollapsed">
+      <div class="formElement col-md-6">
+        <label for="company">Empresa:</label>
+        <select id="company" class="form-control" ng-model="fl.company">
+          <option value="0" selected>&nbsp;</option>
+          <option ng-repeat="company in companies" value="{{company.value}}">{{company.text}}</option>
+        </select>
+      </div>
+      <div class="formElement col-md-6">
+        <label for="business">Unidad de negocio:</label>
+        <select id="business" ng-model="fl.business" class="form-control">
+          <option value="0" selected>&nbsp;</option>
+          <option ng-repeat="business in businesses" value="{{business.value}}">{{business.text}}</option>
+        </select>
+      </div>
+      <div class="formElement col-md-6 dateElement">
+        <label for="startDate">Fecha inicial:</label>
+        <input type="text" 
+          class="form-control" 
+          datepicker-popup="dd/MM/yyyy" 
+          readOnly="true" 
+          ng-model="fl.startDate" 
+          is-open="opened" 
+          datepicker-options="dateOptions" 
+          close-text="Cerrar" 
+          current-text="Hoy" 
+          clear-text="Borrar"/>
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+      </div>
+      <div class="formElement col-md-6 dateElement">
+        <label for="endDate">Fecha final:</label>
+        <input type="text" 
+          class="form-control" 
+          datepicker-popup="dd/MM/yyyy" 
+          readOnly="true" 
+          ng-model="fl.endDate" 
+          is-open="eopened" 
+          datepicker-options="edateOptions" 
+          close-text="Cerrar" 
+          current-text="Hoy" 
+          clear-text="Borrar"/>
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-default" ng-click="eopen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+      </div>
+      <div class="formElement col-md-4">
+        <label for="folio">Folio:</label>
+        <input type="text" id="folio" class="form-control" ng-model="fl.folio">
+      </div>
+      <div class="formElement col-md-4">
+        <label for="currency">Moneda:</label>
+        <select id="currency" ng-model="fl.currency" class="form-control">
+          <option value="0" selected>&nbsp;</option>
+          <option ng-repeat="currency in currencies" value="{{currency.value}}">{{currency.text}}</option>
+        </select>
+      </div>
+      <div class="formElement col-md-4">
+        <label for="status">Estatus:</label>
+        <select id="status" ng-model="fl.status" class="form-control">
+          <option value="0" selected>&nbsp;</option>
+          <option ng-repeat="status in statuss" value="{{status.value}}">{{status.text}}</option>          
+        </select>
+      </div>
+      <div class="options col-md-12">
+        <button id="search" class="btn btn-default" ng-click="searchByFilter()" ng-disabled="!searchEnable">Buscar</button>
+      </div>
+      &nbsp;
+    </div>
+</div>
+
+<div class="mainElement resume">
+  <table class="table table-hover">
+  	<thead>
+  		<tr>
+  			<th>Moneda</th>
+  			<th>En autorización</th>
+  			<th>Recibidas</th>
+  			<th>Pagadas</th>
+  			<th>Rechazadas</th>
+  			<th>Descuentos</th>
+  			<th>Bloqueadas</th>
+  		</tr>
+  	</thead>
+  	<tbody>
+  		<tr ng-repeat="entry in resume">
+  			<td>{{ entry.currency }}</td>
+        <td>{{ entry.inAuthorization | currency }}</td>
+        <td>{{ entry.received | currency }}</td>
+        <td>{{ entry.paid | currency }}</td>
+        <td>{{ entry.rejected | currency }}</td>
+        <td>{{ entry.discounts | currency }}</td>
+        <td>{{ entry.locked | currency }}</td>
+  		</tr>
+  	</tbody>
+  </table>
+</div>
+
+<div class="mainElement invoices">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th colspan="9">Factura</th>
+        <th colspan="2">Pago</th>
+        <th>Pedido</th>
+        <th colspan="2">CFDI</th>
+      </tr>
+      <tr>
+        <th>Co</th>
+        <th><abbr title="Proveedor">Prov</abbr></th>
+        <th>Un</th>
+        <th>Folio</th>
+        <th>Fecha</th>
+        <th>Importe</th>
+        <th>Mon</th>
+        <th>Recibida</th>
+        <th>Estatus</th>
+        <th>Saldo</th>
+        <th>Fecha</th>
+        <th>Número</th>
+        <th>XML</th>
+        <th>PDF</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="invoice in invoices">
+        <td>{{invoice.co}}</td>
+        <td>{{invoice.provider}}</td>
+        <td>{{invoice.un}}</td>
+        <td>{{invoice.folio}}</td>
+        <td>{{invoice.date}}</td>
+        <td>{{invoice.total | currency}}</td>
+        <td>{{invoice.currency}}</td>
+        <td>{{invoice.receiptDate}}</td>
+        <td>{{invoice.status}}</td>
+        <td>{{invoice.balance | currency}}</td>
+        <td>{{invoice.paymentDate}}</td>
+        <td>{{invoice.orderNumber}}</td>
+        <td><a href="{{invoice.xmlCFDI}}" target="_blank" class="imgXML"><img src="images/invoice-xml.png" title="Descargar XML"></a></td>
+        <td><a href="{{invoice.pdfCFDI}}" target="_blank" class="imgPDF"><img src="images/invoice-pdf.png" title="Descargar PDF"></a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,66 @@
+{
+	"rc":"00",
+	"rm":"Facturas encontradas",
+	"data": {
+		"invoices":[
+			{
+				"id":"rty57868",
+				"co": "1401",
+				"provider": "976520",
+				"un":"1401",
+				"folio":"246",
+				"date":"08/01/2015",
+				"total":"6450.15",
+				"currency":"MXN",
+				"currencyType":1,
+				"receiptDate":"09/02/2015",
+				"status":"Programada",
+				"statusValue":3,
+				"balance":"6450.15",
+				"paymentDate":"11/03/2015",
+				"orderNumber": "98564756",
+				"xmlCFDI":"rutaarchivo.xml",
+				"pdfCFDI":"rutaarchivo.pdf"
+			},
+			{
+				"id":"rty56842",
+				"co": "1401",
+				"provider": "976520",
+				"un":"1401",
+				"folio":"245",
+				"date":"08/05/2015",
+				"total":"6450.15",
+				"currency":"MXN",
+				"currencyType":1,
+				"receiptDate":"09/02/2015",
+				"status":"Programada",
+				"statusValue":3,
+				"balance":"6450.15",
+				"paymentDate":"11/07/2015",
+				"orderNumber": "9856999",
+				"xmlCFDI":"rutaarchivo.xml",
+				"pdfCFDI":"rutaarchivo.pdf"
+			}
+		],
+		"resume":[
+			{
+				"currency":"MXN",
+				"inAuthorization":"0",
+				"received":"0",
+				"paid":"0",
+				"rejected":"0",
+				"discounts":"0",
+				"locked":"0"
+			},
+			{
+				"currency":"USD",
+				"inAuthorization":"0",
+				"received":"0",
+				"paid":"0",
+				"rejected":"0",
+				"discounts":"0",
+				"locked":"0"
+			}
+		]
+	}
+}

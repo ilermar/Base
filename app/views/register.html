@@ -1,0 +1,57 @@
+<div class="jumbotron">
+  <div class="title">Solicitud de acceso</div> 
+  <div class="subtitle">Registro de usuario nuevo para el portal</div>
+</div>
+
+
+<div class="filtersContainer">
+    <h4>Solicitud de acceso</h4>
+    <form class="form-horizontal" ng-submit="submit()">
+		<div class="form-group">
+			<label for="inputEmail3" class="col-sm-3 control-label">Número de proveedor</label>
+			<div class="col-sm-9">
+				<input type="text" class="form-control" placeholder="Número de proveedor" ng-required="true" ng-model="obj.provider">
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label for="inputEmail3" class="col-sm-3 control-label">RFC</label>
+			<div class="col-sm-9">
+				<input type="text" class="form-control" placeholder="RFC" ng-required="true" ng-model="obj.rfc">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputEmail3" class="col-sm-3 control-label">Razón social</label>
+			<div class="col-sm-9">
+				<input type="text" class="form-control" placeholder="Razón social" ng-model="obj.companyName">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputEmail3" class="col-sm-3 control-label">Persona que solicita</label>
+			<div class="col-sm-9">
+				<input type="text" class="form-control" placeholder="Persona que solicita" ng-required="true" ng-model="obj.name">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputEmail3" class="col-sm-3 control-label">Correo electrónico</label>
+			<div class="col-sm-9">
+				<input type="email" class="form-control" placeholder="Correo electrónico" ng-required="true" ng-model="obj.email">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputEmail3" class="col-sm-3 control-label">Teléfono</label>
+			<div class="col-sm-9">
+				<input type="text" class="form-control" placeholder="Teléfono" ng-model="obj.phone">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-3 col-sm-9">
+				<button type="submit" class="btn btn-default">Enviar</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+<p class="alert alert-info">
+	 NOTA: Es importante que registres una cuenta de correo electrónico compartida a la que puedan acceder todas las personas de tu empresa que podrán acceder al portal, dado que este será el medio de contacto que utilizará el portal para enviarte diversas notificaciones. 
+</p>
