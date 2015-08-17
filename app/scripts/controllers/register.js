@@ -8,10 +8,11 @@
  * Controller of the baseApp
  */
 angular.module('baseApp')
-.controller('RegisterCtrl', [ "$scope", "$http", "$location", function( $scope, $http, $location ) {
+.controller('RegisterCtrl', [ "$scope", "$http", "$location", 'dialogs', '$translate', function( $scope, $http, $location, dialogs, $translate ) {
 	$scope.obj = {
 
 	};
+	$translate.use( 'es' );
 
 	$scope.submit = function(){
 		
@@ -19,15 +20,23 @@ angular.module('baseApp')
 			params:$scope.obj 
 		} ).then(
         	function(response) {
-            	if(response.status === 200){
-            		console.log($scope.obj);
-            		//mostrar mensaje
-            		$location.path('/main');
+        		if(response.status === 200){
+            		response = response.data;
+            		if( response.rc === '00' ){
+            			var dlg = dialogs.notify('Usuario registrado', response.rm );    
+            			dlg.result.then(function(){
+				        	$location.path('/main');
+				        },function(){
+				        	$location.path('/main');	
+				        });
+            		}else{
+            			dialogs.error('Error en el registro', response.rm );
+            		}         	   		
             	}else{
-              		
+              		dialogs.error('Error de comunicación', response.rm );
             	}
-        	}, function() {
-        		//error
+        	}, function(msg) {
+        		dialogs.error('Error de comunicación', msg );
 			}
 		);
 

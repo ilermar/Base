@@ -16,9 +16,11 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'dialogs.main',
+    'pascalprecht.translate'
   ] )
-  .config(function ($routeProvider) {
+  .config(['$routeProvider', 'dialogsProvider','$translateProvider',function( $routeProvider, dialogsProvider,$translateProvider){
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -58,9 +60,33 @@ angular
       .otherwise({
         redirectTo: '/main'
       });
-    //$httpProvider.interceptors.push('httpInterceptor');
-  })
 
+      dialogsProvider.useBackdrop('static');
+      dialogsProvider.useEscClose(false);
+      dialogsProvider.useCopy(false);
+      dialogsProvider.setSize('sm');
+
+      $translateProvider.translations('es',{
+        DIALOGS_ERROR: "Error",
+        DIALOGS_ERROR_MSG: "Se ha producido un error desconocido.",
+        DIALOGS_CLOSE: "Cerrar",
+        DIALOGS_PLEASE_WAIT: "Espere por favor",
+        DIALOGS_PLEASE_WAIT_ELIPS: "Espere por favor...",
+        DIALOGS_PLEASE_WAIT_MSG: "Esperando en la operación para completar.",
+        DIALOGS_PERCENT_COMPLETE: "% Completado",
+        DIALOGS_NOTIFICATION: "Notificación",
+        DIALOGS_NOTIFICATION_MSG: "Notificación de aplicacion Desconocido.",
+        DIALOGS_CONFIRMATION: "Confirmación",
+        DIALOGS_CONFIRMATION_MSG: "Se requiere confirmación.",
+        DIALOGS_OK: "Cerrar",
+        DIALOGS_YES: "Si",
+        DIALOGS_NO: "No"
+      });
+
+      $translateProvider.preferredLanguage('en-US');
+    
+  } ] )
+  
   .factory('Auth', function(){
     var user = null;
 

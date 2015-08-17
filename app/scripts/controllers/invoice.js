@@ -8,9 +8,10 @@
  * Controller of the baseApp
  */
 angular.module('baseApp')
-  .controller('InvoiceCtrl', [ '$rootScope', '$scope', '$http',
-  	function ( $rootScope, $scope, $http ) {
+  .controller('InvoiceCtrl', [ '$rootScope', '$scope', '$http', '$location', 'Auth', 'dialogs', '$translate',
+  	function ( $rootScope, $scope, $http, $location, Auth, dialogs, $translate ) {
 
+  		$translate.use( 'es' );
   		$scope.isCollapsed 	= true;
   		$scope.companies 	= [];
   		$scope.businesses 	= [];
@@ -36,20 +37,28 @@ angular.module('baseApp')
 			if($rootScope.currentUser){ //session
 				$http.get( 'api/companies.json?rnd=' + Math.random() )
 					.success(function(response, status) {
-						$scope.queryReady++;
 						$rootScope.dataLoading = false;
 						if(status === 200){
-							var data = response.data;
-							$scope.companies = data.companies;
+							if( response.rc === "00" ){
+								$scope.queryReady++;
+								$scope.companies = response.data.companies;
+							}else if( response.rc === "01" ){ /// Sesión inválida
+					        	$rootScope.currentUser = null;
+						      	Auth.setUser($rootScope.currentUser);
+						      	$location.path('/login');
+					        }else{
+					        	dialogs.error('Error', response.rm );
+					        }
 						}else{
 							$scope.companies = [];
+							dialogs.error('Error de comunicación', "Imposible obtener las empresas" );
 						}
 						if( $scope.queryReady >= 2 ){
 							$scope.searchEnable = true;
 						}
 					})
 					.error(function(){
-						//alert
+						dialogs.error('Error de comunicación', "Imposible obtener las empresas" );
 					}
 				);
 				$http.get( 'api/businesses.json?rnd=' + Math.random() )
@@ -57,17 +66,27 @@ angular.module('baseApp')
 						$scope.queryReady++;
 						$rootScope.dataLoading = false;
 						if(status === 200){
-							var data = response.data;
-							$scope.businesses = data.businesses;
+							console.log( response );
+							if( response.rc === "00" ){
+								$scope.queryReady++;
+								$scope.businesses = response.data.businesses;
+							}else if( response.rc === "01" ){ /// Sesión inválida
+					        	$rootScope.currentUser = null;
+						      	Auth.setUser($rootScope.currentUser);
+						      	$location.path('/login');
+					        }else{
+					        	dialogs.error('Error', response.rm );
+					        }
 						}else{
 							$scope.businesses = [];
+							dialogs.error('Error de comunicación', "Imposible obtener las unidades de negocio" );
 						}
 						if( $scope.queryReady >= 2 ){
 							$scope.searchEnable = true;
 						}
 					})
 					.error(function(){
-						//alert
+						dialogs.error('Error de comunicación', "Imposible obtener las unidades de negocio" );
 					}
 				);
 
@@ -96,15 +115,25 @@ angular.module('baseApp')
 				} ).then(
 		        	function(response) {
 		            	if(response.status === 200){
-		            		var data = response.data.data;
-		        			$scope.invoices = data.invoices;
-		        			$scope.resume 	= data.resume;
+		        			var response = response.data;
+							if( response.rc === "00" ){
+								var data = response.data;
+			        			$scope.invoices = data.invoices;
+			        			$scope.resume 	= data.resume;
+							}else if( response.rc === "01" ){ /// Sesión inválida
+					        	$rootScope.currentUser = null;
+						      	Auth.setUser($rootScope.currentUser);
+						      	$location.path('/login');
+					        }else{
+					        	dialogs.error('Error al obtener facturas', response.rm );
+					        }
 		            	}else{
 		              		$scope.invoices = [];
 		              		$scope.resume	= [];
+		              		dialogs.error('Error de comunicación', "Imposible obtener las facturas" );
 		            	}
 		        	}, function() {
-		        		//error
+		        		dialogs.error('Error de comunicación', "Imposible obtener las facturas" );
 					}
 				);
 
