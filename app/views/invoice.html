@@ -1,35 +1,10 @@
-<div class="jumbotron">
-  <div class="title">Enviar factura</div> 
-  <div class="subtitle">Agrega nueva factura</div>
-</div>
-
-<div>
-	<form name="myForm">
-	    <fieldset>
-	    	<div class="elem">
-				<legend>Cargar factura </legend>
-				<br>
-				<label for="xmlFileId"> Selecciona archivo XML: </label>
-				<input id="xmlFileId" type="file" ngf-select ng-model="xmlFile" name="file" accept=".xml" ngf-max-size="2MB" required>
-				<i ng-show="myForm.file.$error.required">*Obligatorio</i>
-				<i ng-show="myForm.file.$error.maxSize">Archivo muy grande {{picFile.size / 1000000|number:1}}MB: máx {{picFile.$errorParam}}</i>
-				<br>
-				<button ng-disabled="!myForm.$valid" ng-click="uploadXML(xmlFile)" class="btn btn-default">Cargar factura</button>
-	    	</div>
-			
-			<div class="elem">
-				<span class="progress" ng-show="xmlFile.progress >= 0">
-					<div style="width:{{xmlFile.progress}}%" ng-bind="xmlFile.progress + '%'"></div>
-				</span>
-				<br	/>
-				<span ng-show="xmlFile.result" class="alert alert-success">Factura cargada correctamente</span>
-				<span class="alert alert-danger" ng-show="errorMsg">{{errorMsg}}</span>
-			</div>
-	    </fieldset>
-	</form>
-</div>
-
 <div class="invoiceWrapper" ng-show="validInvoice">
+	<h1>Detalles de la factura <span>{{invoice.folio}}</span></h1>
+	<div class="options">
+		<a href="{{invoice.xmlCFDI}}" target="_blank" class="imgXML">Descargar XML</a> | 
+		<a href="{{invoice.pdfCFDI}}" target="_blank" class="imgXML">Descargar PDF</a>
+	</div>
+
 	<div class="containerRFC">
 		<div class="emisor">
 			<h3>Emisor</h3>
@@ -133,5 +108,10 @@
 				</tr>
 			</tbody>
 		</table>	
+	</div>
+</div>
+<div class="" ng-show="!validInvoice">
+	<div class="alert alert-warning">
+  		<strong>Factura incorrecta!</strong> Imposible obtener los datos de la factura
 	</div>
 </div>

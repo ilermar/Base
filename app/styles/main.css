@@ -388,6 +388,99 @@ tr{
   right: 15px;
 }
 
+.invoiceWrapper ul{
+  list-style: none;
+}
+
+.invoiceWrapper ul li span{
+  font-weight: bold;
+}
+
+.invoiceWrapper .fullName{
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.rfcI span{
+  font-weight: bold;
+}
+
+.options{
+  padding-bottom: 0.5em;  
+}
+
+.emisor,
+.receptor{
+  display: inline-block;
+  vertical-align: top;
+  width: 45%;
+}
+.receptor{
+  margin-left: 1em;
+}
+.containerRFC,
+.digital,
+.invoice,
+.order{
+  border-top: 2px solid #4194EE;
+  border-bottom: 4px solid #F4FF40;
+  margin: 1em 0;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+
+}
+
+.invoice table{
+  width: 100%;
+}
+
+.invoiceWrapper table th{
+  background-color: #E6E6E6;
+  text-align: center;
+}
+
+.invoice table td.center{
+  text-align: center;
+}
+
+.invoice table td.right{
+  text-align: right;
+}
+
+.order{
+  text-align: center;
+}
+
+.order table {
+  margin: 0 auto;
+  width: 60%;
+}
+
+form fieldset .elem,
+form fieldset .elem2{
+  width: 30%;
+  display: inline-block;
+}
+
+form fieldset .elem2{
+  width: 50%;
+}
+form .progress {
+  line-height: 15px;
+}
+
+.progress {
+  display: inline-block;
+  width: 100px;
+  border: 3px groove #CCC;
+}
+
+.progress div {
+  font-size: smaller;
+  background: #F4FF40;
+  width: 0;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   /* Remove the padding we set earlier */

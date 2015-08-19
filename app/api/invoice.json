@@ -1,0 +1,56 @@
+{
+	"rc":"00",
+	"rm":"Factura completa",
+	"data":{
+		"id":"agsdj567asd98",
+		"folio":"A-4523",
+		"xmlCFDI":"rutaarchivo.xml",
+		"pdfCFDI":"rutaarchivo.pdf",
+		"emisor":{
+			"fullName":"Razon Social SC de RL",
+			"address":"Direccion # 33, Col Patitos, Ciudad Inversa, CP 11111",
+			"rfc":"RFC987654",
+			"suplierId": "9856"
+		},
+		"receptor":{
+			"fullName":"Razon Social SC de RL",
+			"address":"Direccion # 33, Col Patitos, Ciudad Inversa, CP 11111",
+			"rfc":"RFC987654"
+		},
+		"digital":{
+			"invoiceNumber":"129",
+			"date":"10/08/2015 19:24:14",
+			"type":"ingreso",
+			"certificate":"2000100000099999488",
+			"uuid":"4ac9dffa-4689-11e5-a151-feff819cdc9f",
+			"sat":"20001000000100003848",
+			"certificateDate":"10/08/2015 19:25:14"
+		},
+		"invoice":{
+			"iva":"2.16",
+			"subtotal":12.23,
+			"total":14.39,
+			"data": [
+				{
+					"description":"Artículo",
+					"quantity":"1",
+					"um":"pza",
+					"price":"2.23",
+					"total":"2.23"
+				},
+				{
+					"description":"Artículo 2",
+					"quantity":"2",
+					"um":"pza",
+					"price":"5",
+					"total":"10"
+				}
+			]
+		},
+		"order":{
+			"number": "78954",
+			"position": "1",
+			"quantity" : "23"
+		}
+	}
+}

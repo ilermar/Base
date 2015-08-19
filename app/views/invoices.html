@@ -135,10 +135,10 @@
     </thead>
     <tbody>
       <tr ng-repeat="invoice in invoices">
-        <td>{{invoice.co}}</td>
-        <td>{{invoice.provider}}</td>
-        <td>{{invoice.un}}</td>
-        <td>{{invoice.folio}}</td>
+        <td><a href="#invoice/{{invoice.id}}">{{invoice.co}}</a></td>
+        <td><a href="#invoice/{{invoice.id}}">{{invoice.provider}}</a></td>
+        <td><a href="#invoice/{{invoice.id}}">{{invoice.un}}</a></td>
+        <td><a href="#invoice/{{invoice.id}}">{{invoice.folio}}</a></td>
         <td>{{invoice.date}}</td>
         <td>{{invoice.total | currency}}</td>
         <td>{{invoice.currency}}</td>
@@ -146,7 +146,7 @@
         <td>{{invoice.status}}</td>
         <td>{{invoice.balance | currency}}</td>
         <td>{{invoice.paymentDate}}</td>
-        <td>{{invoice.orderNumber}}</td>
+        <td><a href="#invoice/{{invoice.id}}">{{invoice.orderNumber}}</a></td>
         <td><a href="{{invoice.xmlCFDI}}" target="_blank" class="imgXML"><img src="images/invoice-xml.png" title="Descargar XML"></a></td>
         <td><a href="{{invoice.pdfCFDI}}" target="_blank" class="imgPDF"><img src="images/invoice-pdf.png" title="Descargar PDF"></a></td>
       </tr>

@@ -18,9 +18,11 @@ angular
     'ngTouch',
     'ui.bootstrap',
     'dialogs.main',
-    'pascalprecht.translate'
+    'pascalprecht.translate',
+    'ngFileUpload'
   ] )
-  .config(['$routeProvider', 'dialogsProvider','$translateProvider',function( $routeProvider, dialogsProvider,$translateProvider){
+  .config(['$routeProvider', 'dialogsProvider','$translateProvider',
+    function( $routeProvider, dialogsProvider,$translateProvider){
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -34,6 +36,11 @@ angular
       })
       .when('/invoices', {
         templateUrl: 'views/invoices.html',
+        controller: 'InvoicesCtrl',
+        controllerAs: 'invoicesctrl'
+      })
+      .when('/invoice/:idInvoice', {
+        templateUrl: 'views/invoice.html',
         controller: 'InvoiceCtrl',
         controllerAs: 'invoicectrl'
       })
